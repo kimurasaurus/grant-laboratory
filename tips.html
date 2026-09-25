@@ -59,6 +59,54 @@
       object-fit: cover;
       border: 1px solid #d4af37;
     }
+
+    /* Video banner container with increased height and adjusted vertical framing */
+    .tips-video-banner {
+      position: relative;
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .tips-video-banner video {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: auto;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0.75;
+    }
+
+    .tips-video-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.25);
+      z-index: 2;
+    }
+
+    .tips-video-banner h2 {
+      position: relative;
+      z-index: 3;
+      margin: 0;
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    }
   </style>
 </head>
 <body>
@@ -84,7 +132,10 @@
   </header>
 
   <main class="container">
-    <h2>Grant Writing Tips</h2>
+    <div class="tips-video-banner">
+      <video autoplay loop muted playsinline src="images/tips-writing.mp4"></video>
+      <h2>Grant Writing Tips</h2>
+    </div>
     
     <!-- Section 1: Study the Sponsor -->
     <div class="tip-card">
