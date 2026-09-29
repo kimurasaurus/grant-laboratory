@@ -15,7 +15,6 @@
       background-color: #0b0b0b;
     }
 
-    /* Full-screen background video */
     .bg-video {
       position: fixed;
       top: 0;
@@ -29,13 +28,15 @@
     }
 
     header {
-      position: relative;
-      z-index: 10;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       background: #000000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(223, 186, 124, 0.15);
     }
 
     .logo-container {
@@ -81,7 +82,7 @@
     }
 
     nav a:hover, nav a.active {
-      color: #d4af37;
+      color: #dfba7c;
     }
 
     .header-hero {
@@ -89,7 +90,7 @@
       width: 40px;
       border-radius: 50%;
       object-fit: cover;
-      border: 1px solid #d4af37;
+      border: 1px solid #dfba7c;
     }
 
     main {
@@ -102,26 +103,26 @@
       padding: 3rem 1.5rem;
     }
 
-    /* Frosted Card Overlay matching what-we-do.html & tips.html */
     .content-card {
       background: rgba(15, 15, 15, 0.85);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(212, 175, 55, 0.3);
+      border: 1px solid rgba(223, 186, 124, 0.3);
       border-radius: 20px;
       padding: 3.5rem 3.5rem;
       max-width: 650px;
       width: 100%;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
       color: #ffffff;
+      text-align: center;
     }
 
     .content-card h2 {
       margin-top: 0;
       margin-bottom: 2rem;
-      color: #d4af37;
+      color: #dfba7c;
+      text-align: center;
     }
 
-    /* Form Fields Styling */
     .form-group {
       margin-bottom: 1.5rem;
       display: flex;
@@ -145,7 +146,7 @@
     .form-group textarea {
       padding: 0.85rem;
       border-radius: 8px;
-      border: 1px solid rgba(212, 175, 55, 0.4);
+      border: 1px solid rgba(223, 186, 124, 0.4);
       background-color: rgba(0, 0, 0, 0.6);
       color: #ffffff;
       font-size: 1rem;
@@ -155,7 +156,7 @@
 
     .form-group input:focus,
     .form-group textarea:focus {
-      border-color: #d4af37;
+      border-color: #dfba7c;
     }
 
     .required-disclaimer {
@@ -164,6 +165,7 @@
       margin-top: -0.5rem;
       margin-bottom: 1.5rem;
       display: block;
+      text-align: left;
     }
 
     .cta-button {
@@ -186,12 +188,12 @@
       box-shadow: 0 6px 20px rgba(223, 186, 124, 0.5);
     }
 
-    /* Formspree Validation Feedback Styling */
     [data-fs-error] {
       color: #ff6b6b;
       font-size: 0.85rem;
       margin-top: 0.4rem;
       display: block;
+      text-align: left;
     }
 
     [data-fs-success] {
@@ -208,12 +210,11 @@
 </head>
 <body>
 
-  <!-- Fullscreen Background Looping Video -->
   <video autoplay loop muted playsinline class="bg-video" src="images/contactus.mp4"></video>
 
   <header>
     <div class="logo-container">
-      <a href="index.html" class="logo-link">
+      <a href="#" onclick="goHome(event)" class="logo-link">
         <img src="images/logo.jpg" alt="Grant Laboratory Logo" class="header-logo">
       </a>
       <span class="location-text">Based in Tampa, Florida</span>
@@ -221,7 +222,7 @@
 
     <div class="header-right">
       <nav>
-        <a href="index.html">Home</a>
+        <a href="#" onclick="goHome(event)">Home</a>
         <a href="what-we-do.html">What We Do</a>
         <a href="tips.html">Tips & Templates</a>
         <a href="contact.html" class="active">Contact Us</a>
@@ -236,11 +237,9 @@
     <div class="content-card">
       <h2>Contact Us</h2>
 
-      <!-- Formspree Status Displays -->
       <div data-fs-success></div>
       <div data-fs-error></div>
 
-      <!-- Formspree Integrated Form -->
       <form id="my-form">
         <div class="form-group">
           <label for="name"><span class="required-asterisk">*</span>Name</label>
@@ -273,12 +272,20 @@
     </div>
   </main>
 
-  <!-- Formspree AJAX Library Integration -->
   <script>
     window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
     formspree('initForm', { formElement: '#my-form', formId: 'meaopvpw' });
   </script>
   <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
-
+  <script>
+    function goHome(e) {
+      e.preventDefault();
+      if (window.location.protocol === 'file:') {
+        window.location.href = 'index.html';
+      } else {
+        window.location.href = '/';
+      }
+    }
+  </script>
 </body>
 </html>
