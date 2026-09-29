@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- update -->
   <title>Grant Laboratory - Contact Us</title>
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -16,7 +15,6 @@
       background-color: #0b0b0b;
     }
 
-    /* Full-screen background video */
     .bg-video {
       position: fixed;
       top: 0;
@@ -29,14 +27,17 @@
       transform: scale(1.25);
     }
 
+    /* Sticky Navigation Header */
     header {
-      position: relative;
-      z-index: 10;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       background: #000000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(223, 186, 124, 0.15);
     }
 
     .logo-container {
@@ -103,7 +104,6 @@
       padding: 3rem 1.5rem;
     }
 
-    /* Frosted Card Overlay matching what-we-do.html & tips.html */
     .content-card {
       background: rgba(15, 15, 15, 0.85);
       backdrop-filter: blur(10px);
@@ -122,7 +122,6 @@
       color: #d4af37;
     }
 
-    /* Form Fields Styling */
     .form-group {
       margin-bottom: 1.5rem;
       display: flex;
@@ -187,7 +186,6 @@
       box-shadow: 0 6px 20px rgba(223, 186, 124, 0.5);
     }
 
-    /* Formspree Validation Feedback Styling */
     [data-fs-error] {
       color: #ff6b6b;
       font-size: 0.85rem;
@@ -209,12 +207,11 @@
 </head>
 <body>
 
-  <!-- Fullscreen Background Looping Video -->
   <video autoplay loop muted playsinline class="bg-video" src="images/contactus.mp4"></video>
 
   <header>
     <div class="logo-container">
-      <a href="./" class="logo-link">
+      <a href="index.html" class="logo-link">
         <img src="images/logo.jpg" alt="Grant Laboratory Logo" class="header-logo">
       </a>
       <span class="location-text">Based in Tampa, Florida</span>
@@ -222,7 +219,7 @@
 
     <div class="header-right">
       <nav>
-        <a href="./">Home</a>
+        <a href="index.html">Home</a>
         <a href="what-we-do.html">What We Do</a>
         <a href="tips.html">Tips & Templates</a>
         <a href="contact.html" class="active">Contact Us</a>
@@ -237,11 +234,9 @@
     <div class="content-card">
       <h2>Contact Us</h2>
 
-      <!-- Formspree Status Displays -->
       <div data-fs-success></div>
       <div data-fs-error></div>
 
-      <!-- Formspree Integrated Form -->
       <form id="my-form">
         <div class="form-group">
           <label for="name"><span class="required-asterisk">*</span>Name</label>
@@ -274,7 +269,6 @@
     </div>
   </main>
 
-  <!-- Formspree AJAX Library Integration -->
   <script>
     window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
     formspree('initForm', { formElement: '#my-form', formId: 'meaopvpw' });
