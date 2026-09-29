@@ -81,16 +81,18 @@
       border: 1px solid #dfba7c;
     }
 
-    /* Compact height with smooth bottom-fade vignette matching your reference */
+    /* Enhanced Hero Banner with Fade-In Animation */
     .page-hero {
       position: relative;
       width: 100vw;
-      height: 25vh;
-      min-height: 220px;
+      height: 18.75vh;
+      min-height: 165px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      text-align: center;
     }
 
     .bg-video {
@@ -112,15 +114,43 @@
       z-index: 2;
     }
 
-    .page-hero h1 {
+    .hero-container-inner {
       position: relative;
       z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: heroEntrance 0.8s ease-out forwards;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      color: #a3a3a3;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    .page-hero h1 {
       color: #dfba7c;
       font-size: 2.25rem;
       line-height: 1.3;
       font-weight: 700;
       margin: 0;
-      text-align: center;
+      letter-spacing: 0.5px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    @keyframes heroEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     main {
@@ -214,7 +244,10 @@
   <section class="page-hero">
     <video autoplay loop muted playsinline class="bg-video" src="images/whatwedo-meeting.mp4"></video>
     <div class="hero-vignette"></div>
-    <h1>About the Grant Laboratory</h1>
+    <div class="hero-container-inner">
+      <span class="hero-eyebrow">What We Do</span>
+      <h1>What Happens Next</h1>
+    </div>
   </section>
 
   <main>
