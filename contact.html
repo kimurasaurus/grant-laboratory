@@ -100,16 +100,16 @@
       justify-content: center;
       position: relative;
       z-index: 10;
-      padding: 3rem 1.5rem;
+      padding: 1.5rem 1.5rem;
     }
 
     .content-card {
-      background: rgba(15, 15, 15, 0.85);
+      background: rgba(15, 15, 15, 0.88);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(223, 186, 124, 0.3);
-      border-radius: 20px;
-      padding: 3.5rem 3.5rem;
-      max-width: 650px;
+      border-radius: 16px;
+      padding: 2rem 2.25rem;
+      max-width: 580px;
       width: 100%;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
       color: #ffffff;
@@ -118,21 +118,22 @@
 
     .content-card h2 {
       margin-top: 0;
-      margin-bottom: 2rem;
+      margin-bottom: 1.2rem;
       color: #dfba7c;
       text-align: center;
+      font-size: 1.5rem;
     }
 
     .form-group {
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.8rem;
       display: flex;
       flex-direction: column;
       text-align: left;
     }
 
     .form-group label {
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+      font-size: 0.85rem;
       color: #e5e5e5;
     }
 
@@ -144,12 +145,12 @@
 
     .form-group input,
     .form-group textarea {
-      padding: 0.85rem;
-      border-radius: 8px;
+      padding: 0.55rem 0.75rem;
+      border-radius: 6px;
       border: 1px solid rgba(223, 186, 124, 0.4);
       background-color: rgba(0, 0, 0, 0.6);
       color: #ffffff;
-      font-size: 1rem;
+      font-size: 0.95rem;
       outline: none;
       transition: border-color 0.2s ease;
     }
@@ -160,10 +161,10 @@
     }
 
     .required-disclaimer {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #aaaaaa;
-      margin-top: -0.5rem;
-      margin-bottom: 1.5rem;
+      margin-top: -0.15rem;
+      margin-bottom: 1rem;
       display: block;
       text-align: left;
     }
@@ -171,11 +172,11 @@
     .cta-button {
       display: inline-block;
       width: 100%;
-      padding: 0.85rem;
+      padding: 0.65rem;
       background: linear-gradient(135deg, #dfba7c 0%, #aa7c11 100%);
       color: #000;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.95rem;
       border: none;
       border-radius: 30px;
       cursor: pointer;
@@ -190,8 +191,8 @@
 
     [data-fs-error] {
       color: #ff6b6b;
-      font-size: 0.85rem;
-      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
       display: block;
       text-align: left;
     }
@@ -199,8 +200,9 @@
     [data-fs-success] {
       color: #2ecc71;
       font-weight: bold;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       text-align: center;
+      font-size: 0.9rem;
     }
 
     [aria-invalid="true"] {
@@ -224,7 +226,7 @@
       <nav>
         <a href="#" onclick="goHome(event)">Home</a>
         <a href="what-we-do.html">What We Do</a>
-        <a href="tips.html">Tips & Templates</a>
+        <a href="resources.html">Resources</a>
         <a href="contact.html" class="active">Contact Us</a>
       </nav>
       <a href="https://www.linkedin.com/in/jacobresnick/" target="_blank">
@@ -261,7 +263,7 @@
 
         <div class="form-group">
           <label for="message"><span class="required-asterisk">*</span>Message</label>
-          <textarea id="message" name="message" rows="5" data-fs-field required placeholder="How can Grant Laboratory help you?"></textarea>
+          <textarea id="message" name="message" rows="3" data-fs-field required placeholder="How can Grant Laboratory help you?"></textarea>
           <span data-fs-error="message"></span>
         </div>
 
